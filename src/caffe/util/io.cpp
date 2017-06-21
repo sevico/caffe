@@ -377,7 +377,8 @@ bool ReadSegmentRGBToDatum(const string& filename, const int label,
 		int offset = offsets[i];
 		for (int file_id = 1; file_id < length+1; ++file_id){
 			sprintf(tmp, name_pattern, int(file_id+offset));
-			string filename_t = filename + "/" + tmp;
+		//	string filename_t = filename + "/" + tmp;
+			string filename_t = filename + tmp;
 			cv::Mat cv_img_origin = cv::imread(filename_t, cv_read_flag);
 			if (!cv_img_origin.data){
 				LOG(ERROR) << "Could not load file " << filename_t;
